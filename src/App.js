@@ -1,26 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
+import axios from 'axios'
 import './App.css';
+import Book from './components/Book'
+import Header from './components/Header'
+import Sidebar from './components/Sidebar'
+import BooksDisplay from './components/BooksDisplay'
 
-function App() {
+class App extends Component {
+  constructor () {
+    super()
+    this.state = {
+      books: []
+    }  
+  }
+  componentDidMount() {
+    axios.get("/api/books")
+    .then( res => {
+    console.log('Got books')
+    this.setState({books: res.data})
+    })
+    .catch(err => console.log('err', err))
+  }
+
+  updateBookList = (newBookList) =>{
+    this.setState({books: newBookList })
+  }
+
+  render() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+      <Header />
+      <Sidebar className="sideBar" updateBookList={this.updateBookList}/>
+      <BooksDisplay  bookList={this.state.books}/>
+    
+  </div>
+  )}
 }
 
-export default App;
+export default App
