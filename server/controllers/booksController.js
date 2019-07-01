@@ -3,7 +3,7 @@ const books = [
     id: 1, 
     title: "Pride and Prejudice",
     author: 'Jane Austen',
-    genre: "Classics",
+    genre: "Classic",
     rating: '⭐⭐⭐⭐⭐',
     image: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1487841905i/84979.jpg"
   },
@@ -27,7 +27,7 @@ const books = [
     id: 4,
     title: "Rebecca",
     author: "Daphne du Maurier",
-    genre: "Classics, Mystery",
+    genre: "Classic, Mystery",
     rating: '⭐⭐⭐⭐',
     image: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1409595845i/636993._SY75_.jpg"
   },
@@ -43,7 +43,7 @@ const books = [
     id: 6,
     title: "A Tree Grows in Brooklyn",
     author: "Betty Smith",
-    genre: "Classics, Historical",
+    genre: "Classic, Historical",
     rating: '⭐⭐⭐⭐⭐',
     image: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1327883484i/14891._SY75_.jpg"
   },
@@ -155,19 +155,19 @@ module.exports = {
       let { id } = req.params
       let {title, author, genre, rating, image} = req.body
       let index = books.findIndex(book => book.id === +id)
-      let starRating = ""
-      let star = '\u2B50'
-        if(+rating === 5) {starRating = star.repeat(5)} 
-        else if (+rating === 4) {starRating = "⭐⭐⭐⭐"}
-        else if (+rating === 3) {starRating = "⭐⭐⭐"}
-        else if (+rating === 2) {starRating = "⭐⭐"}
-        else if (+rating === 1) {starRating = "⭐"}
-        console.log(starRating)
+      // let starRating = ""
+      // let star = '\u2B50'
+      //   if(+rating === 5) {starRating = star.repeat(5)} 
+      //   else if (+rating === 4) {starRating = "⭐⭐⭐⭐"}
+      //   else if (+rating === 3) {starRating = "⭐⭐⭐"}
+      //   else if (+rating === 2) {starRating = "⭐⭐"}
+      //   else if (+rating === 1) {starRating = "⭐"}
+      //   console.log(starRating)
       let updatedBook = {
         title,
         author,
         genre,
-        rating: starRating ,
+        rating,
         image, 
         id: +id
       }

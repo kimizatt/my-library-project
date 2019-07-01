@@ -10,8 +10,9 @@ class Sidebar extends Component {
         title: '',
         author: '',
         genre: '',
-        rating: 0,
-        image: ''
+        rating: '',
+        image: '',
+        filterString: ''
     }
 
     this.addBook = this.addBook.bind(this)
@@ -29,13 +30,21 @@ class Sidebar extends Component {
     axios.post ('/api/books', {title, author, genre, rating, image})
             .then(res => {
             this.props.updateBookList(res.data)
+            
     })
+    
         .catch(err => console.log('err', err))
     } 
 
-
+    handleSearch(filter) {
+        this.setState({filterString: filter})
+    }
+ 
+    
     
     render () {
+    
+
     return (
         <div id="sidebar">
         
@@ -48,14 +57,16 @@ class Sidebar extends Component {
             <input onChange={e =>this.handleChange(e)} name="image" className="addData" placeholder="Image" />
             <button onClick={this.addBook}  id="add-book" >Submit</button></div>
 
-            <div className="side-bar-container">
+            {/* <div className="side-bar-container">
             <h4>Search for a book:</h4>
-            <input className="searchData" placeholder="By title" />
-            
-            <input className="searchData" placeholder="By author" />
-            <input className="searchData" placeholder="By genre" />
-            <input className="searchData" placeholder="By rating" />
-            <button>Search</button></div>
+            <input className="searchData" placeholder="By title" onChange={e=>this.handleSearch(e.target.value)}/>
+            <button>Search</button>
+            <input className="searchData" placeholder="By author" onChange={e => this.handleSearch(e.target.value)} />
+            <button>Search</button>
+            <input className="searchData" placeholder="By genre" onChange={e=>this.handleSearch(e.target.value)}/>
+            <button>Search</button>
+            <input className="searchData" placeholder="By rating" onChange={e=>this.handleSearch(e.target.value)}/>
+            <button>Search</button></div> */}
 
         
 

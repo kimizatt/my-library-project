@@ -4,10 +4,9 @@ import Book from "./Book"
 
 class BooksDisplay extends Component {
     constructor (props) {
-        super()
-        
+        super()   
     }
-    
+
 
     render () {
         console.log(this.props)
@@ -27,7 +26,9 @@ class BooksDisplay extends Component {
                 updateBook={this.props.updateBook}
                 setEditing={this.props.setEditing}
                 />
-                </div>  
+            
+                </div>
+            
         )})
             
         return (

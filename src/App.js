@@ -52,12 +52,6 @@ class App extends Component {
     axios
     .put(`/api/books/${id}`, updatedBook)
     .then(res => {
-    
-      // if(res.data.rating === 5){res.data.rating = "⭐⭐⭐⭐⭐"} 
-      // else if (res.data.rating === 4){res.data.rating = "⭐⭐⭐⭐"}
-      // else if (res.data.rating === 3){res.data.rating = "⭐⭐⭐"}
-      // else if (res.data.rating === 2){res.data.rating = "⭐⭐"}
-      // else if (res.data.rating === 1){res.data.rating = "⭐"}
       this.setState({
         
         books: res.data,

@@ -58,6 +58,7 @@ header > h1 {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  margin-top: 10%;
 }
 
 #booksDisplay {
@@ -85,7 +86,7 @@ input {
   background: #f1f1f1;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   align-content: center;
   text-align: center; 
   z-index: 4;
@@ -94,11 +95,11 @@ input {
   box-shadow: 3px 3px 3px #085b5f;
   margin-top: 5%;
 }
-#delete-button {
+/* #delete-button {
   float: right;
   height: 10%;
   
-} 
+}  */
 .author {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   margin-bottom: 2px;
@@ -110,10 +111,10 @@ input {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 .book-contents {
+  justify-content: center;
+  margin-top: 10%;
   text-align: center;
   opacity: 1.0;
-  
-
 }
 img {
   max-width: 30%;
@@ -122,7 +123,7 @@ img {
 
 #footer {
   height: 10vh;
-  background: gray;
+  background: #49beb7;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -157,13 +158,14 @@ img {
 }
 
 #button-container {
- 
-  
+  /* position: absolute;
+  bottom: 0;  */
   
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items:  flex-end;
+  
+  align-items:  baseline; 
   align-content: flex-end;
   margin-top: 10%;
   

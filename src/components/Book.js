@@ -5,7 +5,7 @@ class Book extends Component {
     constructor (props) {
         super (props)
         this.state = {
-            editing: false ,
+            editing: false,
             title: props.title,
             author: props.author,
             rating: props.rating
