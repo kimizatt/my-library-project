@@ -7,7 +7,7 @@ const app = express()
 app.use(express.json())
 
 app.get('/api/books', bc.books)
-app.put('/api/books/:id', bc.updateRating)
+app.put('/api/books/:id', bc.updateBook)
 app.post('/api/books', bc.addBook)
 app.delete('/api/books/:id', bc.deleteBook)
 
